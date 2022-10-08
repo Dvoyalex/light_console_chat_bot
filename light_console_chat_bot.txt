@@ -1,0 +1,47 @@
+user_name = input("Как Вас зовут?: ")
+user_text = input(user_name + ", напишите что-нибудь: ").lower()
+# user_text = user_text.lower()
+# print(user_text)
+status_greeting = 0
+while status_greeting == 0:
+    if "привет" or "hi" in user_text:
+        print("Здравствуйте," + user_name + "!")
+        status_greeting = 1
+    elif "здравствуйте" in user_text:
+        print("Здравствуйте," + user_name + "!")
+        status_greeting = 1
+    elif "хай" in user_text:
+        print("Здравствуйте," + user_name + "!")
+        status_greeting = 1
+    elif "здарова" in user_text:
+        print("Здравствуйте," + user_name + "!")
+        status_greeting = 1
+    else:
+        status_greeting = 0
+        user_text = input(user_name + ", сначала лучше поздороваться :)... Давайте еще раз!\nВведите текст: ").lower()
+# print(user_text)
+loop_1 = 0
+while status_greeting == 1 and loop_1 == 0:
+    user_text = input("Введите текст1: ").lower()
+    loop_1 = 0
+    if "спасибо" in user_text:
+        print("Не за что!")
+        # loop_1 = 1
+    elif "благодарю" in user_text:
+        print("Не за что!")
+        # loop_1 = 1
+    elif "прощай" in user_text:
+        print("До свидания!")
+        loop_1 = 1
+    elif "прощайте" in user_text:
+        print("До свидания!")
+        loop_1 = 1
+    elif "пока" in user_text:
+        print("Пока!")
+        loop_1 = 1
+    elif "до свидания" in user_text:
+        print("До свидания!")
+        loop_1 = 1
+    else:
+        loop_1 = 0
+        print(user_name + ", не знаю такого слова :)... Давайте еще раз")
