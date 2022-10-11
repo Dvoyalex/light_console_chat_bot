@@ -1,47 +1,33 @@
+# define keywords
+greeting_words = ["привет", "здравствуйте", "хай", "hello", "hi"]
+gratitude_words = ["спасибо", "благодарю", "thank you", "thanks"]
+goodbye_words = ["пока", "до свидания", "прощай", "прощайте", "bye", "goodbye"]
+
+# user interaction
 user_name = input("Как Вас зовут?: ")
 user_text = input(user_name + ", напишите что-нибудь: ").lower()
-# user_text = user_text.lower()
-# print(user_text)
+
+# Greetings code
 status_greeting = 0
 while status_greeting == 0:
-    if "привет" or "hi" in user_text:
-        print("Здравствуйте," + user_name + "!")
-        status_greeting = 1
-    elif "здравствуйте" in user_text:
-        print("Здравствуйте," + user_name + "!")
-        status_greeting = 1
-    elif "хай" in user_text:
-        print("Здравствуйте," + user_name + "!")
-        status_greeting = 1
-    elif "здарова" in user_text:
+    if user_text in greeting_words:
         print("Здравствуйте," + user_name + "!")
         status_greeting = 1
     else:
         status_greeting = 0
         user_text = input(user_name + ", сначала лучше поздороваться :)... Давайте еще раз!\nВведите текст: ").lower()
-# print(user_text)
+
+# Thanks or goodbye code
 loop_1 = 0
-while status_greeting == 1 and loop_1 == 0:
-    user_text = input("Введите текст1: ").lower()
-    loop_1 = 0
-    if "спасибо" in user_text:
+while loop_1 == 0:
+    user_text = input("Введите текст: ").lower()
+    if user_text in gratitude_words:
         print("Не за что!")
-        # loop_1 = 1
-    elif "благодарю" in user_text:
-        print("Не за что!")
-        # loop_1 = 1
-    elif "прощай" in user_text:
+        loop_1 = 0
+    elif user_text in goodbye_words:
         print("До свидания!")
-        loop_1 = 1
-    elif "прощайте" in user_text:
-        print("До свидания!")
-        loop_1 = 1
-    elif "пока" in user_text:
-        print("Пока!")
-        loop_1 = 1
-    elif "до свидания" in user_text:
-        print("До свидания!")
-        loop_1 = 1
+        break
     else:
         loop_1 = 0
-        print(user_name + ", не знаю такого слова :)... Давайте еще раз")
+        print(user_name + ", круто выглядите!")
+# end
